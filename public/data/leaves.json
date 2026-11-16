@@ -1,0 +1,12 @@
+[
+  {
+    "requestId": 1,
+    "employeeId": 101,
+    "employeeName": "Rahul Sharma",
+    "leaveType": "Casual Leave",
+    "fromDate": "2025-06-01",
+    "toDate": "2025-06-03",
+    "reason": "Family Function",
+    "status": "Pending"
+  }
+]

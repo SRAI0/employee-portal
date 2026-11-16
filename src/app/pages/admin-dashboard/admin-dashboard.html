@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+<h2 class="container mt-4">Admin Dashboard</h2>
+<h6 class="container">Here's what's happening across your organisation.</h6>
+<div class="container mt-4">
+
+    <div class="row">
+
+        <div class="col-md-4 mb-3">
+
+            <app-dashboard-card title="Total Employees" [value]="totalEmployees" color="primary">
+
+            </app-dashboard-card>
+
+        </div>
+
+        <div class="col-md-4 mb-3">
+
+            <app-dashboard-card title="Active Employees" [value]="activeEmployees" color="success">
+
+            </app-dashboard-card>
+
+        </div>
+
+        <div class="col-md-4 mb-3">
+
+            <app-dashboard-card title="Pending Leaves" [value]="pendingLeaves" color="warning">
+
+            </app-dashboard-card>
+
+        </div>
+
+        <div class="col-md-4 mb-3">
+
+            <app-dashboard-card title="Approved Leaves" [value]="approvedLeaves" color="info">
+
+            </app-dashboard-card>
+
+        </div>
+
+        <div class="col-md-4 mb-3">
+
+            <app-dashboard-card title="Rejected Leaves" [value]="rejectedLeaves" color="danger">
+
+            </app-dashboard-card>
+
+        </div>
+
+    </div>
+
+</div>

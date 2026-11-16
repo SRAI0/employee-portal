@@ -1,0 +1,43 @@
+<div class="card">
+
+  <div class="card-header bg-primary text-white">
+
+    Employee Details
+
+  </div>
+
+  <div class="card-body">
+
+    <p><b>ID:</b> {{employee.id}}</p>
+
+    <p><b>Name:</b> {{employee.fullName}}</p>
+
+    <p><b>Email:</b> {{employee.email}}</p>
+
+    <p><b>Department:</b> {{employee.department}}</p>
+
+    <p><b>Designation:</b> {{employee.designation}}</p>
+
+    <p><b>Salary:</b> {{employee.salary}}</p>
+
+    <button class="btn btn-warning me-2" (click)="editEmployee.emit(employee.id)">
+
+      Edit
+
+    </button>
+
+    <button class="btn btn-danger me-2" (click)="deleteEmployee.emit(employee.id)">
+
+      Delete
+
+    </button>
+
+    <button class="btn btn-secondary" (click)="closeDetails.emit()">
+
+      Close
+
+    </button>
+
+  </div>
+
+</div>

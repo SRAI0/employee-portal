@@ -1,0 +1,27 @@
+<div class="modal-backdrop">
+
+  <div class="dialog-box">
+
+    <h4>{{title}}</h4>
+
+    <p>{{message}}</p>
+
+    <div class="text-end">
+
+      <button class="btn btn-secondary me-2" (click)="cancelled.emit()">
+
+        Cancel
+
+      </button>
+
+      <button class="btn btn-danger" (click)="confirmed.emit()">
+
+        Confirm
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

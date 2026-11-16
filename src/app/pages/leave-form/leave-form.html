@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+    <h2>Apply Leave</h2>
+    <form [formGroup]="leaveForm" (ngSubmit)="submit()">
+        <div class="mb-3">
+            <label>Leave Type<span class="required">*</span></label>
+            <select class="form-select" formControlName="leaveType">
+                <option>Casual Leave</option>
+                <option>Sick Leave</option>
+                <option>Earned Leave</option>
+                <option>Emergency Leave</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label>From Date<span class="required">*</span></label>
+            <input type="date" class="form-control" formControlName="fromDate">
+        </div>
+
+        <div class="mb-3">
+            <label>To Date<span class="required">*</span></label>
+            <input type="date" class="form-control" formControlName="toDate">
+        </div>
+
+        <div class="text-danger" *ngIf="dateError">
+            {{dateError}}
+        </div>
+
+        <div class="mb-3">
+            <label>Reason<span class="required">*</span></label>
+            <textarea rows="4" class="form-control" formControlName="reason"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success">
+            Submit
+        </button>
+    </form>
+</div>
+
+<style>
+  .required {
+    color: red;
+    margin-left: 2px;
+  }
+</style>

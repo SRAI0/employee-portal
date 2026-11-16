@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+          <h3 class="text-center">Employee Portal Login</h3>
+        </div>
+        <div class="card-body">
+          <form #loginForm="ngForm" (ngSubmit)="login()">
+            <div class="mb-3">
+              <label>Email</label>
+              <input type="email" name="email" class="form-control" required [(ngModel)]="email" #emailRef="ngModel">
+              <small class="text-danger" *ngIf="emailRef.invalid && emailRef.touched">
+                Email is required
+              </small>
+            </div>
+            <div class="mb-3">
+              <label>Password</label>
+              <input type="password" name="password" class="form-control" required [(ngModel)]="password"
+                #passwordRef="ngModel">
+
+              <small class="text-danger" *ngIf="passwordRef.invalid && passwordRef.touched">
+                Password is required
+              </small>
+            </div>
+
+            <div *ngIf="errorMessage" class="alert alert-danger">
+              {{errorMessage}}
+            </div>
+
+            <button class="btn btn-primary w-100" [disabled]="loginForm.invalid">
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

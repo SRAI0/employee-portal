@@ -1,0 +1,88 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+
+    <h2>Leave Requests</h2>
+
+    <table class="table table-bordered">
+
+        <thead>
+
+            <tr>
+
+                <th>ID</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Days</th>
+                <th>Status</th>
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let leave of leaves">
+
+                <td>{{leave.requestId}}</td>
+
+                <td>{{leave.employeeName}}</td>
+
+                <td>{{leave.leaveType}}</td>
+
+                <td>{{leave.fromDate}}</td>
+
+                <td>{{leave.toDate}}</td>
+
+                <td>
+
+                    {{
+
+                    getTotalDays(
+                    leave.fromDate,
+                    leave.toDate
+                    )
+
+                    }}
+
+                </td>
+
+                <td>{{leave.status}}</td>
+
+                <td>
+
+                    <button class="btn btn-success btn-sm me-2" (click)="approve(leave.requestId)" *ngIf="
+leave.status==='Pending'
+&& authService.getRole()==='Admin'
+">
+
+                        Approve
+
+                    </button>
+
+                    <button class="btn btn-danger btn-sm" (click)="reject(leave.requestId)" *ngIf="
+leave.status==='Pending'
+&& authService.getRole()==='Admin'
+">
+
+                        Reject
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+
+        </tbody>
+
+    </table>
+
+    <app-confirm-dialog *ngIf="showDialog" [title]="dialogTitle" [message]="dialogMessage" (confirmed)="confirmAction()"
+        (cancelled)="cancelAction()">
+    </app-confirm-dialog>
+
+</div>
